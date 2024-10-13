@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>呆核 - 开始界面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgba(173, 216, 230, 0.5); /* 浅蓝色半透明背景 */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .logo {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: rgba(135, 206, 235, 0.8); /* 主题色 */
+        }
+        .start-button {
+            color: white;
+            text-decoration: none; /* 去除下划线 */
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 20px; /* 圆润的按钮 */
+            background-color: rgba(135, 206, 235, 0.8); /* 主题色 */
+            transition: opacity 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .loader {
+            border: 5px solid rgba(135, 206, 235, 0.8); /* 浅蓝色半透明 */
+            border-top: 5px solid white; /* 白色 */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite; /* 提高转速 */
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo">呆核</div>
+    <div class="loader" style="display: none;"></div>
+    <a href="/daihe/1.html" class="start-button" id="startButton">开始体验</a>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function(e) {
+            e.preventDefault(); // 防止默认的链接跳转行为
+            const loader = document.querySelector('.loader');
+            loader.style.display = 'block'; // 显示加载动画
+            this.style.opacity = '0'; // 逐渐隐藏按钮
+
+            // 1秒后隐藏按钮并跳转到目标页面
+            setTimeout(function() {
+                loader.style.display = 'none'; // 隐藏加载动画
+                this.style.display = 'none'; // 完全隐藏按钮
+                window.location.href = this.getAttribute('href');
+            }.bind(this), 1000);
+        });
+    </script>
+
+</body>
+</html>

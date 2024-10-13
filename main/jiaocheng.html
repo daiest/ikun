@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>呆核商店</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgba(173, 216, 230, 0.5); /* 浅蓝色半透明背景 */
+            color: #333;
+        }
+        header {
+            background-color: rgba(135, 206, 235, 0.8); /* 半透明的浅蓝色背景 */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 10px 10px 0 0; /* 圆润的顶部 */
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(135, 206, 235, 0.8);
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 20px; /* 圆润的按钮 */
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: white;
+            color: #87CEEB;
+        }
+        .container {
+            padding: 10px;
+        }
+        .card {
+            background-color: white;
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 15px; /* 圆润的卡片 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            width: 90%;
+            display: block; /* 使卡片成为块级元素，以便能够点击整个区域 */
+            text-decoration: none; /* 去除下划线 */
+            color: inherit; /* 继承文本颜色 */
+            transition: transform 0.3s; /* 平滑过渡效果 */
+        }
+        .card:hover {
+            transform: translateY(-5px); /* 鼠标悬停时上移 */
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px; /* 圆润的图片 */
+        }
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .card p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: rgba(135, 206, 235, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-radius: 0 0 10px 10px; /* 圆润的底部 */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/daihe/index.html">呆软件</a>
+        <a href="/daihe/main/jiaocheng.html">呆表教程</a>
+        <a href="/daihe/main/fenlei.html">分类</a>
+        <a href="/daihe/main/tools.html">呆工具</a>
+    </nav>
+    <div class="container">
+        <a href="/1.html" class="card">
+           
+            <h3>教程1</h3>
+            
+        </a>
+        <a href="/2.html" class="card">
+            
+            <h3>教程2</h3>
+           
+        </a>
+        <!-- 更多App卡片可以在这里添加 -->
+    </div>
+    
+</body>
+</html>

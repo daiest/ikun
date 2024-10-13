@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>呆核商店</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgba(173, 216, 230, 0.5); /* 浅蓝色半透明背景 */
+            color: #333;
+        }
+        header {
+            background-color: rgba(135, 206, 235, 0.8); /* 半透明的浅蓝色背景 */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 10px 10px 0 0; /* 圆润的顶部 */
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(135, 206, 235, 0.8);
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 20px; /* 圆润的按钮 */
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: white;
+            color: #87CEEB;
+        }
+        .container {
+            padding: 10px;
+        }
+        .card {
+            background-color: white;
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 15px; /* 圆润的卡片 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            width: 90%;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px; /* 圆润的图片 */
+        }
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .card p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: rgba(135, 206, 235, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-radius: 0 0 10px 10px; /* 圆润的底部 */
+        }
+    </style>
+</head>
+<body>
+   
+    <nav>
+        <a href="/daihe/main/gongju.html">呆软件</a>
+        <a href="/daihe/main/jiaocheng.html">呆表教程</a>
+        <a href="/daihe/main/fenlei.html">分类</a>
+        <a href="/daihe/main/tools.html">呆工具</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <img src="app-icon-1.png" alt="App Icon 1">
+            <h3>App名称1</h3>
+            <p>App简介...</p>
+        </div>
+        <div class="card">
+            <img src="app-icon-2.png" alt="App Icon 2">
+            <h3>App名称2</h3>
+            <p>App简介...</p>
+        </div>
+        <!-- 更多App卡片 -->
+    </div>
+    
+</body>
+</html>

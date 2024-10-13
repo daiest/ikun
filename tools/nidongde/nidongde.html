@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>if (typeof globalThis === 'undefined') {
+  window.globalThis = window
+}</script>
+
+  <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>呆荷</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* 视频容器 */
+     .video-container {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            position: relative;
+        }
+
+        uni-video {
+            width: 100%;
+            height: auto;
+        }
+
+        /* 下一个按钮 */
+     .next-button {
+            font-size: 16px;
+            padding: 8px 16px;
+            border: none;
+            background-color: #ADD8E6;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+            left: 100px;
+            top: 20px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+         .video-container {
+                max-width: 100%;
+            }
+
+            uni-video {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 视频播放器 -->
+    <div class="video-container">
+        <video id="videoPlayer" controls preload="auto"></video>
+    </div>
+    <!-- 下一个按钮 -->
+    <button class="next-button" onclick="location.reload()">下一个</button>
+
+    <script>
+        // 视频源数组
+        const videoSources = [
+            "http://api.yujn.cn/api/xjj.php",
+            "http://api.yujn.cn/api/zzxjj.php",
+            "https://api.yujn.cn/api/nvda.php",
+            "http://api.yujn.cn/api/heisis.php",
+            "http://api.yujn.cn/api/baisis.php",
+            "http://api.yujn.cn/api/juhexjj.php",
+            "http://api.yujn.cn/api/shwd.php",
+            "http://api.yujn.cn/api/wmsc.php",
+            "https://www.xc6b.com/content/templates/XCNEW/tools/sister_video"
+        ];
+        let currentVideoIndex = 0;
+
+        function switchToNextVideo() {
+            const videoPlayer = document.getElementById('videoPlayer');
+            if (videoPlayer) {
+                const nextVideoSrc = videoSources[currentVideoIndex];
+                videoPlayer.src = nextVideoSrc;
+                videoPlayer.load();
+                videoPlayer.play();
+            }
+            currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+        }
+
+        const videoPlayer = document.getElementById('videoPlayer');
+        videoPlayer.addEventListener('ended', switchToNextVideo);
+
+        // 页面加载时自动播放第一个视频
+        document.addEventListener('DOMContentLoaded', switchToNextVideo);
+    </script>
+</body>
+
+</html>
