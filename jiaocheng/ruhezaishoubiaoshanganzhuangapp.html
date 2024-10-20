@@ -28,30 +28,17 @@
     border-radius: 5px;
     display: inline-block;
     margin-bottom: 20px;
-    cursor: pointer;
   }
   .back-button:hover {
-    background-color: #7ab9e8;
+    background-color: #89cff0;
   }
   h1, h2 {
-    color: #0a58ca;
+    color: #89cff0;
   }
   article {
     line-height: 1.6;
   }
 </style>
-<script>
-// 监听窗口加载事件
-window.addEventListener('DOMContentLoaded', (event) => {
-  // 获取返回按钮
-  const backButton = document.querySelector('.back-button');
-  // 为返回按钮添加点击事件监听器
-  backButton.addEventListener('click', function() {
-    // 执行返回操作
-    window.history.back();
-  });
-});
-</script>
 </head>
 <body>
 
@@ -62,7 +49,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
   <!-- 文章内容 -->
   <article>
     <h1>手表开发者模式及ADB调试指南</h1>
-    <!-- 文章内容省略，使用上面提供的文本内容 -->
+
+    <h2>打开开发者模式</h2>
+    <p>在手表的设置中找到“关于”选项，然后多次点击“版本号”直到出现“开发者模式”已开启的提示。不同手表可能有不同的开启方式，例如在一些手表上，可以通过拨号输入特定的代码（如<code>*#889#</code>）来打开设置，然后找到关于手表的选项，在里面找到版本号进行多次点击来开启开发者模式。</p>
+
+    <h2>启用ADB调试</h2>
+    <p>开发者模式开启后，返回设置菜单，找到“开发者选项”，打开“USB调试”。部分手表可能需要通过拨号输入特定代码（如<code>*#*#83781#*#*</code>或<code>*#*#147258369#*#*</code>）来开启开发者选项，然后找到USB Debug进行开启。</p>
+
+    <h2>获取手表的IP地址</h2>
+    <p>在开发者选项中，找到并启用“无线调试”或“通过 WLAN 调试”。首次连接到某个网络并打开无线调试时，系统会弹出提示，需要勾选“总是允许”并点击允许。</p>
+
+    <h2>下载并安装ADB工具</h2>
+    <p>在电脑上下载并安装ADB工具，如WearOS Toolbox或安卓手表ADB实用工具箱，这些工具箱可以帮助你通过有线或无线方式连接手表，并进行各种操作。</p>
+
+    <h2>连接手表和电脑</h2>
+    <p>使用ADB工具通过无线或有线方式连接手表。如果是无线连接，需要在ADB工具中输入手表的IP地址和端口号进行连接。</p>
+
+    <h2>安装软件</h2>
+    <p>连接成功后，使用ADB工具的“安装自定义APK”功能，将APK文件拖入工具窗口或通过文件选择器找到APK文件进行安装。</p>
+
+    <h2>特殊机型的注意事项</h2>
+    <p>对于华为手表，可能需要特殊的操作才能正常安装第三方应用。例如，使用“应用调测助手”APP和“华为运动健康”APP进行配合操作，将HAP文件安装到手表上。</p>
+
+    <h2>使用应用商店</h2>
+    <p>有些工具箱内置了应用商店，如WearOS工具箱的洋葱商店，可以通过它快速下载和安装第三方应用。</p>
   </article>
 </div>
 
