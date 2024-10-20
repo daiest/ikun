@@ -82,6 +82,11 @@
             border-radius: 0 0 10px 10px; /* 圆润的底部 */
         }
     </style>
+    <script>
+        function openInBrowser(url) {
+            window.open(url, '_blank');
+        }
+    </script>
 </head>
 <body>
 
@@ -92,15 +97,11 @@
         <a href="/main/tools.html">呆工具</a>
     </nav>
     <div class="container">
-        <a href="/jiaocheng/ruhezaishoubiaoshanganzhuangapp.html" class="card">
-           
+        <a href="#" onclick="openInBrowser('/jiaocheng/ruhezaishoubiaoshanganzhuangapp.html')" class="card">
             <h3>如何在手表上安装app</h3>
-            
         </a>
-        <a href="/ruhezaishoubiaoshanganzhuangapp.html" class="card">
-            
+        <a href="#" onclick="openInBrowser('/ruhezaishoubiaoshanganzhuangapp.html')" class="card">
             <h3>教程2</h3>
-           
         </a>
         <!-- 更多App卡片可以在这里添加 -->
     </div>
